@@ -1,0 +1,14 @@
+{% extends "TgorzTrainingBundle::base.html.twig" %}
+
+{% form_theme form 'TgorzTrainingBundle:Form:form_theme.html.twig' %}
+{% block pageTitle %}
+    Edycja #{{ product.id }} | {{ parent() }}
+{% endblock %}
+
+{% block contentContainer %}
+    <article class="col-xs-12">
+        <h1>Edycja #{{ product.id }}</h1>
+
+        {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    </article>
+{% endblock %}

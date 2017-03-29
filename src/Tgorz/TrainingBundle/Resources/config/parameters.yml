@@ -1,0 +1,7 @@
+parameters:
+    appApiKey: Usdkaii343as;
+    
+twig:
+    globals:
+        meta_description: Testowa strona programisy.
+        meta_author: Tomasz Górz

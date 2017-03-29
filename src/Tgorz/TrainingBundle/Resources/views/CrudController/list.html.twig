@@ -1,0 +1,47 @@
+{% extends "TgorzTrainingBundle::base.html.twig" %}
+
+{% block pageTitle %} 
+    Lista produktów | {{ parent() }}
+{% endblock %}
+{% block  contentContainer %}
+    <article class="col-xs-12">
+        <h1>Lista Użytkowników</h1>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa</th>
+                    <th>Cena (zł)</th>
+                    <th>Opis</th>
+                    <th>Kategoria</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>
+
+                            <a class="btn btn-sm btn-info" href="{{ path('tgorz_training_update', {'id': product.id}) }}">Zobacz szczegóły</a>
+{#                            <a class="btn btn-sm btn-danger" href="{{ path('tgorz_admin_uses_delete', {'id': user.id}) }}">Usuń</a>#}
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" >Brak produktów</td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </article>
+{% endblock %}
+

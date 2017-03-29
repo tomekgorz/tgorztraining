@@ -1,0 +1,20 @@
+{% extends "TgorzTrainingBundle::base.html.twig" %}
+
+{% if form is not null %}
+    {% form_theme form 'TgorzTrainingBundle:Form:form_theme.html.twig' %}
+{% endif %}
+{% block pageTitle %} 
+    Dodawanie productu | {{ parent() }}
+{% endblock %}
+{% block  contentContainer %}
+    <article class="col-xs-12 journal">
+        <h1>Dodawanie produktu</h1>
+
+        {% if form is not null %}
+            {{ form(form, {'attr': {'novalidate': 'novalidate'} }) }}
+        {%endif%}
+
+
+    </article>
+
+{% endblock %}

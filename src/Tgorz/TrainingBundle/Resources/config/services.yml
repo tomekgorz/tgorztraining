@@ -1,0 +1,6 @@
+services:
+    tgorz_training.pre_persist_subscriber:
+        class: Tgorz\TrainingBundle\EventSubscriber\PrePersistSubscriber
+        tags:
+            - { name: doctrine.event_subscriber }
+
